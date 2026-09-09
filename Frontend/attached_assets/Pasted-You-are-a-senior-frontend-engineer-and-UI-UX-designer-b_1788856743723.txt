@@ -1,0 +1,1786 @@
+You are a senior frontend engineer and UI/UX designer building the frontend MVP for a Smart India Hackathon 2026 project.
+
+PROJECT:
+SIH 2026
+PS ID: SIH26176
+Project: ORCA — Marine Ecosystem Reasoning with Collaborative Agents
+Team: TechMinds
+
+IMPORTANT:
+Build ONLY the FRONTEND.
+
+Do NOT build the Python backend.
+Do NOT build FastAPI.
+Do NOT build PostgreSQL.
+Do NOT build LangGraph.
+Do NOT create real external API integrations.
+
+The backend will be developed separately and integrated later.
+
+The frontend must be designed so that the backend can later replace the mock API layer with minimal code changes.
+
+==================================================
+1. PRIMARY GOAL
+==================================================
+
+Create a polished, functional SIH-quality marine intelligence dashboard called:
+
+ORCA
+
+The application should feel like a unified intelligent marine decision-support platform.
+
+It must demonstrate:
+
+- Marine intelligence
+- Weather information
+- Ocean conditions
+- Potential Fishing Zones (PFZ)
+- Marine risk analysis
+- Interactive GIS map
+- Smart route planning
+- Marine alerts
+- AI assistant
+- Explainable recommendations
+- User location
+- Online/offline status
+- Cached/demo data indication
+
+The application is a DEMO/MVP.
+
+Prioritize:
+1. usability
+2. visual quality
+3. realistic interactions
+4. clean component architecture
+5. backend integration readiness
+
+Do NOT over-engineer the application.
+
+==================================================
+2. TECHNOLOGY REQUIREMENTS
+==================================================
+
+Use:
+
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- React Router
+- Axios
+- Leaflet
+- React-Leaflet
+- Recharts
+- Dexie.js
+- Vite PWA plugin
+
+Use JavaScript, NOT TypeScript.
+
+Do not introduce unnecessary technologies.
+
+Avoid:
+- Next.js
+- TypeScript
+- Redux unless absolutely necessary
+- GraphQL
+- Firebase
+- Supabase frontend SDK
+- complex state management libraries
+- unnecessary UI frameworks
+- unnecessary animation libraries
+
+Use React Context/useState/useEffect where sufficient.
+
+==================================================
+3. APPLICATION STRUCTURE
+==================================================
+
+Create a single-page application with React Router.
+
+Routes:
+
+/dashboard
+/map
+/pfz
+/weather
+/risk
+/route
+/alerts
+/assistant
+/offline
+/about
+
+The application should have a persistent main layout.
+
+Desktop:
+
+┌──────────────────────────────────────────────────────┐
+│ TOP NAVBAR                                            │
+├──────────────┬───────────────────────────────────────┤
+│              │                                       │
+│ SIDEBAR      │ MAIN CONTENT                          │
+│              │                                       │
+│ Dashboard    │                                       │
+│ Marine Map   │                                       │
+│ PFZ          │                                       │
+│ Weather      │                                       │
+│ Risk         │                                       │
+│ Route        │                                       │
+│ Alerts       │                                       │
+│ AI Assistant │                                       │
+│ Offline      │                                       │
+│ About        │                                       │
+│              │                                       │
+└──────────────┴───────────────────────────────────────┘
+
+Responsive mobile layout:
+- collapsible sidebar
+- mobile navigation
+- cards stack vertically
+- map remains usable
+- chat remains usable
+
+==================================================
+4. VISUAL DESIGN
+==================================================
+
+Design a modern marine intelligence / disaster management interface.
+
+Use a professional visual language:
+
+- clean
+- modern
+- technical
+- trustworthy
+- data-oriented
+- marine-themed
+- minimal
+- SIH presentation quality
+
+Use Tailwind CSS.
+
+Do not make it look like a generic admin dashboard.
+
+Use:
+- dark/navy marine-inspired surfaces
+- white/light content areas where appropriate
+- subtle gradients
+- clean cards
+- readable typography
+- clear data hierarchy
+- professional icons
+- status indicators
+- map-centric visuals
+
+Use a consistent spacing system.
+
+Cards should have:
+- rounded corners
+- subtle borders
+- restrained shadows
+- clear headings
+- meaningful icons
+
+Avoid:
+- excessive glassmorphism
+- excessive neon effects
+- excessive gradients
+- huge decorative graphics
+- unnecessary animations
+- clutter
+
+The interface must prioritize information readability.
+
+==================================================
+5. BRANDING
+==================================================
+
+Application name:
+
+ORCA
+
+Subtitle:
+
+Marine Ecosystem Intelligence
+
+Create a simple ORCA text/logo treatment using CSS/text/iconography.
+
+Do not depend on an external logo image.
+
+Header should communicate:
+
+ORCA
+Marine Ecosystem Intelligence
+
+Connectivity indicator:
+
+ONLINE
+LIMITED
+OFFLINE
+
+Also display data source:
+
+LIVE DATA
+or
+DEMO DATA
+
+For now, because no backend exists, default to:
+
+DEMO DATA
+
+Make this easy to change later.
+
+==================================================
+6. MAIN DASHBOARD
+==================================================
+
+Route:
+
+/dashboard
+
+Create an excellent dashboard.
+
+Top section:
+
+Greeting/title:
+
+Marine Intelligence Dashboard
+
+Subtitle:
+
+Real-time marine conditions, fishing-zone intelligence and safety insights.
+
+Top metric cards:
+
+1. Marine Risk
+2. PFZ Score
+3. Wind Speed
+4. Wave Height
+
+Example demo values:
+
+Marine Risk:
+67 / 100
+CAUTION
+
+PFZ:
+82 / 100
+HIGH
+
+Wind:
+20 knots
+
+Wave:
+1.5 m
+
+Do NOT present these as real-world current measurements.
+
+Show:
+
+DEMO DATA
+
+or:
+
+Sample conditions for demonstration
+
+==================================================
+7. DASHBOARD CONTENT
+==================================================
+
+Create these sections:
+
+A. Current Conditions
+
+Cards for:
+
+- Temperature
+- Wind
+- Wave Height
+- Rainfall
+- Visibility
+- SST
+- Chlorophyll
+
+B. Risk Summary
+
+Show:
+
+Risk score
+Risk level
+Risk factors
+
+Example:
+
+67/100
+CAUTION
+
+Factors:
+- High wind
+- Moderate waves
+- Rain expected
+
+C. PFZ Summary
+
+Show:
+- PFZ score
+- PFZ level
+- confidence
+- reasons
+
+Example:
+
+82
+HIGH
+
+Reasons:
+- Favorable SST
+- Favorable chlorophyll
+- Suitable ocean conditions
+
+D. Active Alerts
+
+Show 2–3 demo alerts.
+
+Examples:
+
+HIGH WIND
+HIGH
+
+HEAVY RAINFALL
+MEDIUM
+
+MARINE SAFETY ADVISORY
+HIGH
+
+Clearly mark demo alerts as DEMO.
+
+E. Quick Actions
+
+Buttons:
+
+Check Fishing Safety
+View PFZ
+Plan Safer Route
+Open Marine Map
+Ask AI Assistant
+
+F. AI Recommendation
+
+Create a prominent recommendation card:
+
+RECOMMENDATION
+
+CAUTION
+
+"Based on available demonstration weather and marine data, caution is advised before departure."
+
+Reasons:
+- Wind conditions
+- Wave conditions
+- Rainfall
+
+Confidence:
+82%
+
+Limitation:
+"Verify official marine safety advisories before making operational decisions."
+
+==================================================
+8. INTERACTIVE MAP
+==================================================
+
+Route:
+
+/map
+
+Use:
+
+Leaflet
+React-Leaflet
+
+Create a realistic marine map centered around a demo Indian coastal region.
+
+Use a suitable default coordinate near:
+
+Latitude: 18.52
+Longitude: 72.85
+
+Do NOT require a Mapbox API key.
+
+Use OpenStreetMap tiles for the MVP.
+
+Important:
+Structure map code so the tile provider can be replaced later.
+
+Map must support:
+
+- zoom
+- pan
+- user location marker
+- PFZ markers
+- PFZ polygons
+- risk zones
+- alert markers
+- route line
+
+Create a map legend:
+
+PFZ — High
+PFZ — Medium
+PFZ — Low
+Risk Area
+Alert
+User Location
+Recommended Route
+
+Clicking a PFZ zone should open a popup containing:
+
+PFZ Score
+Level
+Confidence
+SST
+Chlorophyll
+Reasons
+
+Clicking a risk area should show:
+
+Risk score
+Risk level
+Main factors
+
+Clicking an alert should show:
+
+Alert type
+Severity
+Message
+Timestamp
+Source
+
+==================================================
+9. PFZ PAGE
+==================================================
+
+Route:
+
+/pfz
+
+Create a dedicated PFZ intelligence page.
+
+Explain PFZ in simple language:
+
+"Potential Fishing Zones are areas identified as potentially favorable for fishing based on marine environmental indicators."
+
+Show:
+
+PFZ score
+PFZ confidence
+SST
+Chlorophyll
+Ocean conditions
+
+Create PFZ cards.
+
+Example:
+
+PFZ Zone A
+Score: 82
+HIGH
+Confidence: 82%
+
+Reasons:
+- Favorable SST
+- Favorable chlorophyll
+- Suitable ocean conditions
+
+Create a simple chart showing:
+
+SST
+Chlorophyll
+Suitability score
+
+Use Recharts.
+
+Include:
+
+"View on Map"
+
+button.
+
+==================================================
+10. WEATHER PAGE
+==================================================
+
+Route:
+
+/weather
+
+Create a weather intelligence dashboard.
+
+Show:
+
+- Temperature
+- Wind speed
+- Wind direction
+- Wave height
+- Rainfall
+- Visibility
+
+Create charts using Recharts.
+
+Charts:
+
+Wind trend
+Rainfall trend
+Wave height trend
+
+Use demo time-series data.
+
+Example:
+
+06:00
+09:00
+12:00
+15:00
+18:00
+21:00
+
+Add source badge:
+
+DEMO DATA
+
+Add timestamp.
+
+==================================================
+11. RISK PAGE
+==================================================
+
+Route:
+
+/risk
+
+Create marine risk analysis UI.
+
+Large risk score:
+
+67 / 100
+
+Risk level:
+
+CAUTION
+
+Create visual risk indicator.
+
+Show factor breakdown:
+
+Wind
+Impact: High
+
+Wave Height
+Impact: Medium
+
+Rainfall
+Impact: Medium
+
+Visibility
+Impact: Low
+
+Create a bar chart or horizontal factor visualization.
+
+Show:
+
+WHAT?
+Risk level: CAUTION
+
+WHY?
+High wind and moderate wave conditions.
+
+BASED ON:
+Weather data
+Marine data
+Location data
+
+CONFIDENCE:
+82%
+
+LIMITATION:
+"This is decision-support information based on available data and should not replace official marine safety advisories."
+
+Add button:
+
+Analyze Again
+
+==================================================
+12. ROUTE PLANNER
+==================================================
+
+Route:
+
+/route
+
+Create route planning interface.
+
+Inputs:
+
+Start Location
+Destination
+
+Use simple demo location dropdowns rather than requiring geocoding.
+
+Example:
+
+Start:
+Mumbai Coast
+
+Destination:
+Demo Fishing Zone A
+
+Button:
+
+Find Safer Route
+
+Display:
+
+Recommended Route
+Distance
+Estimated Time
+Risk Score
+
+Example:
+
+185 km
+8.2 hours
+Risk Score: 32
+SAFE
+
+Explain:
+
+"The route minimizes combined distance and estimated environmental risk."
+
+Show route on an embedded Leaflet map.
+
+Create route summary card.
+
+Buttons:
+
+View Route on Map
+Recalculate
+
+==================================================
+13. ALERTS PAGE
+==================================================
+
+Route:
+
+/alerts
+
+Create marine alert center.
+
+Filter controls:
+
+All
+Low
+Medium
+High
+Critical
+
+Demo alerts:
+
+HIGH WIND
+HIGH
+
+Heavy rainfall expected in the monitored area.
+
+WAVE WARNING
+HIGH
+
+Elevated wave conditions detected.
+
+MARINE SAFETY ADVISORY
+MEDIUM
+
+Review available safety information before departure.
+
+Every demo alert must visibly say:
+
+DEMO
+
+Do not create fake official government alerts.
+
+Use wording such as:
+
+"Demo alert"
+"Simulated alert"
+"Sample condition"
+
+==================================================
+14. AI ASSISTANT
+==================================================
+
+Route:
+
+/assistant
+
+Create an AI chat interface.
+
+Header:
+
+ORCA AI Assistant
+
+Description:
+
+"Ask about marine conditions, fishing safety, PFZs and safer routes."
+
+Chat interface:
+
+User message
+Assistant response
+
+Initial assistant message:
+
+"Hello. I can help analyze marine conditions, potential fishing zones, estimated risk and route safety using the data available to ORCA."
+
+Suggested questions:
+
+"Is it safe to go fishing here?"
+"Where is the nearest PFZ?"
+"Why is the risk high?"
+"Find me a safer route."
+
+When a question is selected, show a realistic demo response.
+
+Example:
+
+User:
+Is it safe to go fishing here?
+
+Assistant:
+
+CAUTION
+
+Risk Score: 67/100
+
+Based on available demonstration weather and marine data, caution is advised.
+
+Reasons:
+• Wind speed is elevated
+• Wave height is moderate
+• Rainfall is expected
+
+Recommendation:
+Consider delaying departure until conditions improve.
+
+Confidence:
+82%
+
+Data Used:
+Weather
+Marine
+Location
+
+Limitation:
+Verify official marine advisories.
+
+IMPORTANT:
+
+Create the chat service in a separate file:
+
+src/services/chatService.js
+
+For now:
+
+chatService.js → returns demo responses.
+
+Later:
+
+chatService.js → calls FastAPI /api/chat
+
+The UI must not need to change.
+
+==================================================
+15. OFFLINE PAGE
+==================================================
+
+Route:
+
+/offline
+
+Explain:
+
+ORCA supports offline continuity using cached information.
+
+Show:
+
+Connection Status
+Cached Weather
+Cached Marine Data
+Cached PFZ Data
+Cached Alerts
+Last Sync Time
+
+Example:
+
+OFFLINE MODE
+
+Last synchronized:
+10:42 AM
+
+Available offline:
+✓ Weather
+✓ Marine conditions
+✓ PFZ information
+✓ Previous recommendations
+✓ Important alerts
+
+Unavailable offline:
+
+Live external data
+Live AI services
+
+Create a clear warning:
+
+"Offline recommendations use cached data and local rules. They may be outdated."
+
+==================================================
+16. OFFLINE ARCHITECTURE
+
+Implement a basic frontend offline layer.
+
+Use:
+
+Dexie.js
+IndexedDB
+Service Worker
+PWA
+
+Create:
+
+src/services/cacheService.js
+
+Functions:
+
+saveWeather()
+getWeather()
+saveMarine()
+getMarine()
+savePFZ()
+getPFZ()
+saveAlerts()
+getAlerts()
+
+Create:
+
+src/services/connectivityService.js
+
+Detect:
+
+window online
+window offline
+
+Expose application state:
+
+ONLINE
+LIMITED
+OFFLINE
+
+Create:
+
+src/services/localRiskEngine.js
+
+This must be a SIMPLE deterministic rule engine.
+
+Example:
+
+if wind > 30:
+    high risk
+
+if wave_height > 3:
+    high risk
+
+if rainfall > threshold:
+    increase risk
+
+This is only an offline fallback.
+
+Do not pretend it is the full AI system.
+
+==================================================
+17. API ABSTRACTION — VERY IMPORTANT
+==================================================
+
+The most important frontend architecture requirement:
+
+ALL backend communication must happen through:
+
+src/services/
+
+Do NOT call axios directly from random components.
+
+Create:
+
+src/services/api.js
+
+Configure:
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
+Create separate services:
+
+weatherService.js
+marineService.js
+pfzService.js
+riskService.js
+routeService.js
+alertService.js
+chatService.js
+dashboardService.js
+
+Example conceptual structure:
+
+weatherService.getWeather()
+marineService.getMarine()
+pfzService.getPFZ()
+riskService.calculateRisk()
+routeService.calculateRoute()
+alertService.getAlerts()
+chatService.sendMessage()
+
+For now these functions should return DEMO DATA.
+
+Later they will call:
+
+GET /api/weather
+GET /api/marine
+GET /api/pfz
+POST /api/risk
+POST /api/route
+GET /api/alerts
+POST /api/chat
+GET /api/dashboard
+
+DO NOT hardcode API URLs inside page components.
+
+==================================================
+18. MOCK DATA
+==================================================
+
+Create:
+
+src/data/demoData.js
+
+Include realistic but clearly simulated data for:
+
+weather
+marine
+pfz
+risk
+alerts
+routes
+chat responses
+
+All demo objects should contain:
+
+source: "demo"
+
+Where appropriate include:
+
+timestamp
+
+Never label simulated values as real-time.
+
+==================================================
+19. BACKEND INTEGRATION READINESS
+==================================================
+
+Design the frontend around these future backend contracts.
+
+Weather:
+
+GET /api/weather
+
+Marine:
+
+GET /api/marine
+
+PFZ:
+
+GET /api/pfz
+
+Alerts:
+
+GET /api/alerts
+
+Risk:
+
+POST /api/risk
+
+Route:
+
+POST /api/route
+
+Chat:
+
+POST /api/chat
+
+Dashboard:
+
+GET /api/dashboard
+
+Feedback:
+
+POST /api/feedback
+
+The frontend should consume JSON responses.
+
+Do not make the frontend dependent on the current mock implementation.
+
+==================================================
+20. ERROR HANDLING
+==================================================
+
+Create reusable:
+
+LoadingState
+ErrorState
+EmptyState
+
+When an API fails:
+
+DO NOT show a blank screen.
+
+Display:
+
+"Unable to load live data. Showing available demonstration/cached data."
+
+Fallback:
+
+API failure
+↓
+demo data
+
+The UI should remain functional.
+
+==================================================
+21. DATA SOURCE INDICATORS
+==================================================
+
+Every data-driven section should be able to show:
+
+LIVE DATA
+DEMO DATA
+CACHED DATA
+
+Use a reusable component:
+
+DataSourceBadge.jsx
+
+Example:
+
+● LIVE DATA
+
+or:
+
+● DEMO DATA
+
+or:
+
+● CACHED DATA
+
+The source must come from the data object.
+
+Do not hardcode "LIVE DATA" for demo data.
+
+==================================================
+22. USER LOCATION
+==================================================
+
+Implement browser geolocation.
+
+Use:
+
+navigator.geolocation
+
+Create:
+
+src/services/locationService.js
+
+Function:
+
+getUserLocation()
+
+Handle:
+
+permission granted
+permission denied
+browser unsupported
+loading
+
+If permission is unavailable, use the demo location:
+
+18.52, 72.85
+
+Clearly label the demo location.
+
+Do not require location permission for the application to function.
+
+==================================================
+23. NAVIGATION
+==================================================
+
+Sidebar:
+
+Dashboard
+Marine Map
+PFZ Detection
+Weather
+Risk Analysis
+Route Planner
+Alerts
+AI Assistant
+Offline Mode
+About
+
+Add active route highlighting.
+
+Mobile:
+Use a collapsible sidebar.
+
+==================================================
+24. REUSABLE COMPONENTS
+==================================================
+
+Create:
+
+Navbar.jsx
+Sidebar.jsx
+Card.jsx
+MetricCard.jsx
+RiskBadge.jsx
+AlertCard.jsx
+DataSourceBadge.jsx
+AgentStatus.jsx
+RecommendationCard.jsx
+ChatMessage.jsx
+RouteSummary.jsx
+PFZCard.jsx
+LoadingState.jsx
+ErrorState.jsx
+EmptyState.jsx
+MapContainer.jsx
+
+Do not duplicate UI code unnecessarily.
+
+==================================================
+25. AGENT STATUS UI
+==================================================
+
+Create an "Agent Activity" component.
+
+During AI analysis show:
+
+Planner
+✓ Complete
+
+Weather Agent
+✓ Complete
+
+Marine Agent
+✓ Complete
+
+Geo Agent
+✓ Complete
+
+Risk Agent
+✓ Complete
+
+Decision Agent
+✓ Complete
+
+This is UI simulation for the MVP.
+
+Structure it so real backend agent status can later be connected.
+
+==================================================
+26. EXPLAINABILITY
+==================================================
+
+Every major recommendation should visually answer:
+
+WHAT?
+WHY?
+BASED ON WHAT?
+CONFIDENCE
+LIMITATIONS
+
+Create reusable:
+
+RecommendationCard.jsx
+
+Example:
+
+RECOMMENDATION
+CAUTION
+
+WHY
+High wind + moderate waves + expected rainfall
+
+DATA USED
+Weather
+Marine
+Location
+
+CONFIDENCE
+82%
+
+LIMITATION
+Verify official marine advisories.
+
+==================================================
+27. DASHBOARD QUICK DEMO FLOW
+==================================================
+
+The frontend must support this complete demo:
+
+1. User opens Dashboard.
+
+2. Dashboard shows:
+   weather
+   marine
+   PFZ
+   risk
+   alerts
+
+3. User opens AI Assistant.
+
+4. User clicks:
+   "Is it safe to go fishing here?"
+
+5. Chat displays:
+   CAUTION
+   risk score
+   factors
+   recommendation
+   confidence
+   limitations
+
+6. User opens Map.
+
+7. Map displays:
+   user location
+   PFZ
+   risk zone
+   alerts
+
+8. User opens Route Planner.
+
+9. User selects start/destination.
+
+10. Click:
+    Find Safer Route
+
+11. Route summary appears.
+
+12. Route appears on map.
+
+13. User opens Alerts.
+
+14. Demo alert is visible.
+
+15. User switches browser/device offline.
+
+16. Offline indicator changes to:
+
+    OFFLINE
+
+17. Cached information remains available.
+
+18. Offline page explains available cached information.
+
+==================================================
+28. LOADING STATES
+==================================================
+
+Do not instantly display everything without any loading behavior.
+
+For data cards use small loading skeletons.
+
+For AI Assistant:
+
+Show:
+
+Planner analyzing...
+Weather Agent checking conditions...
+Marine Agent checking ocean data...
+Risk Agent calculating risk...
+Decision Agent preparing recommendation...
+
+Then show result.
+
+For demo mode, use short simulated delays where useful.
+
+Do not make the interface unnecessarily slow.
+
+==================================================
+29. ANIMATION
+==================================================
+
+Use subtle animations only.
+
+Examples:
+
+- card hover
+- sidebar transition
+- loading pulse
+- alert appearance
+- chat message appearance
+- map panel transition
+
+Do not use excessive animations.
+
+The application must feel fast.
+
+==================================================
+30. ACCESSIBILITY
+==================================================
+
+Implement basic accessibility:
+
+- buttons must have readable labels
+- inputs must have labels
+- sufficient text contrast
+- keyboard-friendly navigation
+- map controls remain accessible
+- icons should have labels/tooltips where necessary
+
+==================================================
+31. RESPONSIVE DESIGN
+==================================================
+
+Must work on:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+Desktop layout:
+
+Sidebar + content.
+
+Mobile:
+
+Collapsible sidebar
+Stacked cards
+Full-width map
+Responsive charts
+Responsive chat
+
+Do not allow horizontal overflow.
+
+==================================================
+32. CODE ORGANIZATION
+==================================================
+
+Use:
+
+src/
+  components/
+  pages/
+  layouts/
+  services/
+  hooks/
+  context/
+  utils/
+  data/
+
+Keep page files focused.
+
+Do not create giant files.
+
+Separate:
+
+UI
+data
+services
+state
+utilities
+
+==================================================
+33. ENVIRONMENT VARIABLES
+==================================================
+
+Create:
+
+.env.example
+
+Containing:
+
+VITE_API_URL=http://localhost:8000
+
+Do NOT put actual secrets.
+
+Do NOT create frontend API keys.
+
+The frontend should never contain secret backend credentials.
+
+==================================================
+34. PWA
+==================================================
+
+Configure Vite PWA.
+
+Application name:
+
+ORCA Marine Ecosystem Intelligence
+
+Short name:
+
+ORCA
+
+The application should be installable as a PWA.
+
+Create basic service-worker caching for frontend assets.
+
+Do not attempt complicated background synchronization yet.
+
+IndexedDB/Dexie will handle application data caching.
+
+==================================================
+35. README
+==================================================
+
+Create a frontend README containing:
+
+1. Project description
+2. Technologies
+3. Folder structure
+4. Installation
+5. Development command
+6. Production build
+7. Environment variables
+8. Demo mode explanation
+9. Backend integration instructions
+10. API endpoints expected from backend
+
+Example:
+
+npm install
+
+npm run dev
+
+Build:
+
+npm run build
+
+Preview:
+
+npm run preview
+
+==================================================
+36. IMPORTANT BACKEND INTEGRATION DESIGN
+==================================================
+
+The backend team will later provide FastAPI APIs.
+
+Therefore the frontend must follow this pattern:
+
+Component
+    ↓
+Service
+    ↓
+Axios
+    ↓
+FastAPI
+
+NOT:
+
+Component
+    ↓
+Axios directly
+    ↓
+FastAPI
+
+For example:
+
+Dashboard.jsx
+
+calls:
+
+dashboardService.getDashboard()
+
+dashboardService.js
+
+calls:
+
+api.get("/api/dashboard")
+
+api.js
+
+contains:
+
+Axios base configuration.
+
+This architecture is mandatory.
+
+==================================================
+37. DEMO MODE SWITCH
+==================================================
+
+Create a simple configuration:
+
+DEMO_MODE=true
+
+For now use:
+
+DEMO_MODE=true
+
+When backend is ready:
+
+DEMO_MODE=false
+
+However, make the code robust enough that even with DEMO_MODE=false:
+
+API failure
+↓
+fallback demo/cached data
+
+The UI should never crash.
+
+==================================================
+38. DO NOT CREATE THESE FEATURES
+==================================================
+
+Do NOT build:
+
+- authentication system
+- payment system
+- admin dashboard
+- complex user management
+- real-time WebSockets
+- Kafka
+- Redis
+- microservices
+- Kubernetes
+- custom AI model training
+- satellite image deep-learning pipeline
+- complex GIS server
+- blockchain
+- advanced navigation system
+- complicated database frontend
+- production authentication
+- unnecessary third-party integrations
+
+These are outside the 5-day frontend MVP.
+
+==================================================
+39. IMPORTANT UI SAFETY LANGUAGE
+==================================================
+
+This is a marine decision-support application.
+
+Never display AI outputs as guaranteed facts.
+
+Use:
+
+"Based on available data..."
+"Estimated risk..."
+"Recommended..."
+"Potential fishing zone..."
+"Demo data..."
+"Verify official marine advisories."
+
+Do not create fake government/emergency alerts.
+
+==================================================
+40. FINAL FRONTEND QUALITY CHECK
+==================================================
+
+Before considering the frontend complete, verify:
+
+[ ] React runs
+[ ] Vite runs
+[ ] Tailwind works
+[ ] Routing works
+[ ] Sidebar works
+[ ] Navbar works
+[ ] Dashboard works
+[ ] Map works
+[ ] PFZ page works
+[ ] Weather page works
+[ ] Risk page works
+[ ] Route page works
+[ ] Alerts page works
+[ ] AI Assistant works
+[ ] Offline page works
+[ ] About page works
+[ ] Demo data works
+[ ] Loading states work
+[ ] Error states work
+[ ] Responsive design works
+[ ] Geolocation works/fails gracefully
+[ ] Leaflet markers work
+[ ] PFZ visualization works
+[ ] Risk visualization works
+[ ] Route visualization works
+[ ] Charts work
+[ ] Chat works
+[ ] PWA works
+[ ] IndexedDB caching foundation works
+[ ] Online/offline indicator works
+[ ] Data source badges work
+[ ] API service abstraction exists
+[ ] .env.example exists
+[ ] No secrets are committed
+[ ] npm run build succeeds
+
+==================================================
+41. CRITICAL DEVELOPMENT INSTRUCTION
+==================================================
+
+Do not generate a fake static website with all code inside one file.
+
+Build a REAL React application.
+
+Use reusable components.
+
+Use React Router.
+
+Use separate service files.
+
+Use demo data.
+
+Make interactions functional.
+
+Buttons should actually perform actions.
+
+Navigation should work.
+
+Charts should render.
+
+Map should render.
+
+Chat should respond with demo responses.
+
+Route planner should generate a demo route.
+
+PFZ should display demo zones.
+
+Risk should display demo analysis.
+
+Offline state should change when connectivity changes.
+
+==================================================
+42. DEVELOPMENT ORDER
+==================================================
+
+Build in this order:
+
+PHASE 1
+Project setup
+↓
+Tailwind
+↓
+Router
+↓
+Main Layout
+
+PHASE 2
+Sidebar
+↓
+Navbar
+↓
+Dashboard
+
+PHASE 3
+Reusable cards
+↓
+Risk
+↓
+PFZ
+↓
+Weather
+↓
+Alerts
+
+PHASE 4
+Leaflet map
+↓
+PFZ layers
+↓
+Risk layers
+↓
+Alert markers
+↓
+Route
+
+PHASE 5
+AI Assistant
+
+PHASE 6
+Offline/PWA/IndexedDB
+
+PHASE 7
+Responsive design
+↓
+Error states
+↓
+Loading states
+↓
+Final polish
+
+==================================================
+43. AFTER IMPLEMENTATION
+==================================================
+
+After building the application:
+
+1. Run npm install
+2. Run npm run dev
+3. Verify all routes
+4. Verify map
+5. Verify charts
+6. Verify chat
+7. Verify route planner
+8. Verify offline UI
+9. Run npm run build
+10. Fix all build errors
+
+Then provide me with:
+
+A. Final folder structure
+
+B. List of installed dependencies
+
+C. Important files created
+
+D. How to run locally
+
+E. How to build
+
+F. How to export/download the frontend
+
+G. Backend integration points
+
+H. Exact files the backend developer will eventually need to modify
+
+I. Any remaining frontend limitations
+
+==================================================
+44. MOST IMPORTANT REQUIREMENT
+==================================================
+
+Do not optimize for theoretical architecture.
+
+Optimize for:
+
+WORKING DEMO
++
+CLEAN CODE
++
+EASY BACKEND INTEGRATION
++
+SIH PRESENTATION QUALITY
+
+The final result should look like ONE coherent application named ORCA,
+not a collection of unrelated pages.
+
+Start implementing the frontend now.

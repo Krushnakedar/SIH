@@ -1,0 +1,1 @@
+export const calculateRisk = (wind: number, swell: number, visibility: number) => Math.min(100, Math.round(wind * 0.8 + swell * 13 + (10 - Math.min(10, visibility)) * 2));

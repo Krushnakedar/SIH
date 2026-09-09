@@ -1,0 +1,10 @@
+{
+  "name": "ORCA — Marine Ecosystem Intelligence",
+  "short_name": "ORCA",
+  "description": "Marine decision support cockpit for the SIH 2026 demo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#edf7f6",
+  "theme_color": "#12353d",
+  "icons": []
+}

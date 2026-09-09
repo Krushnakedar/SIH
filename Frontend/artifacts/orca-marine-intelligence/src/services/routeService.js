@@ -1,0 +1,2 @@
+export const routeSummary = { distance: '41.8 nm', duration: '3 h 12 min', fuel: '68 L est.', safety: 'Moderate', departure: '06:45', arrival: '09:57' };
+export const routePoints = [{ lat: 18.52, lng: 72.85 }, { lat: 18.57, lng: 72.72 }, { lat: 18.58, lng: 72.54 }];

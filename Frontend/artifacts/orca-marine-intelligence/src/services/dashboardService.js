@@ -1,0 +1,20 @@
+export const dashboardSnapshot = {
+  updated: '06:42 IST',
+  location: 'Mumbai coast · Arabian Sea',
+  seaState: 'Moderate',
+  seaTemp: 28.4,
+  wind: 14,
+  visibility: 8.2,
+  depth: 42,
+  pfzScore: 78,
+  pfzConfidence: 0.74,
+  riskIndex: 31,
+  alerts: 3,
+  recommendation: 'Proceed with caution',
+  recommendationDetail: 'A productive band is estimated 18–24 nm west of your current position. Keep a 2 nm buffer from the southwest edge while swell builds after 16:00.',
+  activity: [
+    { label: 'Ocean conditions', detail: 'Satellite + buoy blend refreshed', time: '06:42', tone: 'good' },
+    { label: 'PFZ model', detail: 'Chlorophyll front identified', time: '06:35', tone: 'signal' },
+    { label: 'Risk engine', detail: 'Swell factor increased to moderate', time: '06:30', tone: 'warn' },
+  ],
+};
